@@ -7,8 +7,6 @@ public class ContentManager : MonoBehaviour {
 
 	public GameObject[] Contents;
 
-	public GameObject currentContent;
-
 	void Awake()
 	{
 		Instance = this;
@@ -18,6 +16,6 @@ public class ContentManager : MonoBehaviour {
 
 	public GameObject GetContentByTargetID(int id)
 	{
-		return currentContent;
+		return Contents[id];
 	}
 }

@@ -4,7 +4,6 @@ using System;
 
 public class WebCam : MonoBehaviour
 {
-	public GameObject ARCamera;
 	public GameObject LastImageSent;
 	public string screenShotURL = "http://images.earthcam.com/ec_metros/ourcams/fridays.jpg";
 	public float TimeToSleep;
@@ -21,10 +20,8 @@ public class WebCam : MonoBehaviour
 		void Start ()
 		{
 				webcamTexture = new WebCamTexture ();
-		ARCamera.renderer.material.mainTexture = webcamTexture;
 				webcamTexture.Play ();
-
-		InvokeRepeating("SetCaptureToTrue" , TimeToSleep * 3 , TimeToSleep);
+				InvokeRepeating("SetCaptureToTrue" , TimeToSleep * 3 , TimeToSleep);
 		}
 
 		void Update ()
@@ -49,7 +46,6 @@ public class WebCam : MonoBehaviour
 				
 				Debug.Log("Data Recieved from Server!");
 		Debug.Log(www.text);
-		//ARCamera.renderer.material.mainTexture = tex;
 		}
 
 
